@@ -110,7 +110,7 @@ export default function App() {
                 //setIsFood(false);
                 // also query up the STUFF
                 getSuggestedLocations(false);
-              }} style={{width:"100%", height:"100%"}} variant="outlined"> Not Food</Button>
+              }} style={{width:"100%", height:"100%"}} variant="outlined">Activity</Button>
             </Grid>
           </Grid>
         </CardContent>
@@ -266,7 +266,7 @@ export default function App() {
 
 
                 getTimeDelta(temp.getTime() + timeSpent * 3600 * 1000, myTrip[myTrip.length - 1].googleObj.address[0], endLoc);
-                
+
                 remainingTimeMs -= (timeSpent*3600*1000 + locSuggest[0].travel_time * 1000 + travelToEnd*1000);
                 setRemainingTimeMs(remainingTimeMs);
                 setLocSuggest(undefined);
@@ -299,11 +299,13 @@ export default function App() {
 
         <Card style={{margin: "0 0 0 50px"}}>
           <CardContent>
+            <CardContent>
             <Typography variant="h5"><b>Let's start planning!</b></Typography>
-
+            <br/>
             <Grid container spacing={2}>
               <Grid item sm={6}>
                 <Typography>When will you start?</Typography>
+                
                 <TextField
                   //focused
                   //fullWidth
@@ -373,8 +375,6 @@ export default function App() {
           
             
           </CardContent>
-
-          
           <CardActions >
               <Button variant={"contained"} style={{margin: "0 8px 0 auto"}} onClick={() => {
                 
@@ -389,6 +389,9 @@ export default function App() {
                 Next
               </Button>
             </CardActions>
+                    </CardContent>
+          
+          
         </Card>
       </Container>
       </div>
